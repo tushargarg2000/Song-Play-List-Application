@@ -105,9 +105,19 @@ public class Main {
                     break;
                 case 3:
                     if(forward){
-
-                    }else{
-
+                        if(listIterator.hasPrevious()){
+                            System.out.println("Now playing "+listIterator.previous().toString());
+                            forward = false;
+                        }else {
+                            System.out.println("we are at the start of the list");
+                        }
+                    }else {
+                        if(listIterator.hasNext()){
+                            System.out.println("now playing "+listIterator.next().toString());
+                            forward = true;
+                        }else {
+                            System.out.println("we have reached to the end of list");
+                        }
                     }
                     break;
                 case 4:
